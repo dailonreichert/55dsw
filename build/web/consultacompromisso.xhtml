@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Consulta de Compromissos</title>
+    </h:head>
+    <h:body onload="#{beanCompromisso.getAll(param.idcontato)}">
+        <h:messages>Consulta Compromisso(s)</h:messages>
+
+        <h:dataTable var="ct" value="#{beanCompromisso.compromissos}">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                <h:outputLabel value="#{ct.idcompromisso}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Descrição</f:facet>
+                <h:outputLabel value="#{ct.descricao}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">Local</f:facet>
+                <h:outputLabel value="#{ct.local}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Data</f:facet>
+                <h:outputLabel value="#{ct.data}" />
+            </h:column>
+            
+        </h:dataTable>
+            
+    </h:body>
+</html>
+

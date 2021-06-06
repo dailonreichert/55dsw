@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <h:messages>Login</h:messages>
+        <h:form>
+            <h:panelGrid columns="1">
+
+                <h:outputLabel>Username</h:outputLabel>
+                <h:inputText value="#{beanLogin.username}" />
+
+                <h:outputLabel>Senha</h:outputLabel>
+                <h:inputSecret value="#{beanLogin.senha}" />
+
+                <h:commandButton value="Entrar" action="#{beanLogin.logar()}" />
+                
+                <h:commandLink value="Não possui cadastro? cadastrar" action="cadastrousuario.jsf" /> 
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
