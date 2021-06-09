@@ -41,7 +41,7 @@ public class BeanCompromisso {
         }
     }
 
-    public void salvar(int idContato) {
+    public void salvar() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg = null;
 
@@ -58,7 +58,7 @@ public class BeanCompromisso {
         if (msg == null) {
             Usuario usuario = (Usuario) SessionUtil.getParam("usuarioLogado");
 
-            Compromisso compromisso = new Compromisso(this.descricao, this.local, this.data, usuario.getId(), idContato);
+            Compromisso compromisso = new Compromisso(this.descricao, this.local, this.data, usuario.getId(), this.idcontato);
 
             if (DaoCompromisso.salvar(compromisso)) {
                 msg = new FacesMessage("Compromisso salvo com sucesso");

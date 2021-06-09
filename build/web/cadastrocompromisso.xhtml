@@ -6,11 +6,10 @@
     <h:head>
         <title>Cadastro de Compromisso</title>
     </h:head>
-    <h:body>
+    <h:body onload="#{beanCompromisso.setIdcontato(param.idcontato)}">
         <h:messages>Cadastrar Compromisso</h:messages>
         <h:form>
             <h:panelGrid columns="1">
-                         
                 <h:outputLabel>Descição</h:outputLabel>
                 <h:inputText value="#{beanCompromisso.descricao}" />
                 
@@ -20,9 +19,8 @@
                 <h:outputLabel>Data</h:outputLabel>
                 <p:calendar id="datetime" value="#{beanCompromisso.data}" pattern="MM/dd/yyyy" />
 
-                <h:commandButton value="Salvar" action="#{beanCompromisso.salvar(param.idcontato)}" />
+                <h:commandButton value="Salvar" action="#{beanCompromisso.salvar()}" />
             </h:panelGrid>
         </h:form>
     </h:body>
 </html>
-

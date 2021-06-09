@@ -96,10 +96,19 @@ public class BeanContato {
         if (msg == null) {
             Usuario usuario = (Usuario) SessionUtil.getParam("usuarioLogado");
 
-            Contato contato = new Contato(this.nome, fone, email, usuario.getId());
-            if (DaoContato.salvar(contato)) {
-                msg = new FacesMessage("Contato salvo com sucesso");
-                context.addMessage(null, msg);
+            if(this.idcontato > 0){
+                Contato contato = new Contato(this.idcontato, this.nome, fone, email, usuario.getId());
+                if (DaoContato.alterar(contato)) {
+                    msg = new FacesMessage("Contato salvo com sucesso");
+                    context.addMessage(null, msg);
+                } 
+            }
+            else{
+                Contato contato = new Contato(this.nome, fone, email, usuario.getId());
+                if (DaoContato.salvar(contato)) {
+                    msg = new FacesMessage("Contato salvo com sucesso");
+                    context.addMessage(null, msg);
+                }   
             }
         }
     }
